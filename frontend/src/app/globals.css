@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Thème Flora : les couleurs viennent des photos (rose rouge, papier
+   pêche, ciel de Ouagadougou, gerbera jaune). Une seule source de vérité.
+   Utilisation : bg-cream, text-ink, bg-bloom, bg-peach, bg-sky, bg-yolk…
+------------------------------------------------------------------- */
+@theme {
+  --color-cream: #fffaf6; /* fond de page */
+  --color-sand: #fdeee3; /* fond pêche très clair */
+  --color-peach: #f7c9ad; /* papier d'emballage */
+  --color-line: #f0d9cb;
+  --color-line-strong: #e3bda8;
+  --color-ink: #2a0d16; /* encre bordeaux */
+  --color-ink-soft: #5e3f47;
+  --color-ink-mute: #805d64;
+  --color-bloom: #b3122f; /* rose rouge */
+  --color-bloom-deep: #8c0d24;
+  --color-blush: #f8c9cf;
+  --color-petal: #f6a9a8;
+  --color-clay: #9a1b2e; /* prix */
+  --color-sky: #2a62b0; /* ciel */
+  --color-sky-soft: #d9e8f7;
+  --color-yolk: #f5b73b; /* gerbera */
+  --color-mist: #ecd8d3;
+  --color-ash: #b99ea0;
+
+  --animate-marquee: marquee 45s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Les polices sont chargées dans src/lib/fonts.ts (next/font) */
+@theme inline {
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bodoni), Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .font-display {
+    letter-spacing: -0.025em;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-sky);
+    outline-offset: 3px;
+  }
+}
+
+/* Le texte fin est trop léger à l'écran : on le remonte à 400 partout */
+.font-light {
+  font-weight: 400;
+}
+
+/* ---- Mouvement d'entrée du titre : chaque ligne monte depuis un masque ---- */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding: 0 0.12em 0.1em 0;
+  margin: 0 -0.12em -0.1em 0;
+}
+.line-mask > span {
+  display: block;
+  animation: line-rise 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes line-rise {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ---- Sceau « 8 ans » qui tourne lentement ---- */
+.seal-spin {
+  animation: seal-spin 30s linear infinite;
+}
+@keyframes seal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
