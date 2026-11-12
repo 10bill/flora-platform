@@ -9,7 +9,7 @@ export function SeasonBanner() {
   const { years, price, oldPrice } = site.anniversary;
 
   return (
-    <section className="relative overflow-hidden bg-bloom py-24 text-cream sm:py-32">
+    <section className="relative overflow-hidden bg-bloom py-16 text-cream sm:py-24 lg:py-32">
       <span
         aria-hidden="true"
         className="pointer-events-none absolute -right-6 -top-16 select-none font-display text-[420px] font-semibold italic leading-none text-bloom-deep sm:-top-28 sm:right-8 sm:text-[640px]"
@@ -18,7 +18,7 @@ export function SeasonBanner() {
       </span>
 
       <Container className="relative">
-        <h2 className="font-display text-[60px] font-semibold leading-[0.92] sm:text-[112px]">
+        <h2 className="font-display text-[44px] font-semibold leading-[0.92] sm:text-[80px] lg:text-[112px]">
           {years} ans,
           <br />
           <em className="font-normal italic">ça se fête !</em>

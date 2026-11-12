@@ -19,7 +19,7 @@ export function SectionHeading({
     <div className={className}>
       {eyebrow && <Eyebrow light={light}>{eyebrow}</Eyebrow>}
       <h2
-        className={`${eyebrow ? "mt-5" : ""} font-display text-[44px] font-semibold leading-[0.98] sm:text-[64px] ${
+        className={`${eyebrow ? "mt-5" : ""} font-display text-[34px] font-semibold leading-[0.98] sm:text-[52px] lg:text-[64px] ${
           light ? "text-cream" : "text-ink"
         }`}
       >

@@ -36,7 +36,7 @@ export default async function JournalPage() {
               Les premiers articles arrivent bientôt.
             </p>
           )}
-          <div className="grid gap-10 md:grid-cols-3">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
               <article key={article.slug} className="group">
                 <Link href={`/journal/${article.slug}`} aria-label={`Lire : ${article.title}`} className="block">
@@ -45,14 +45,14 @@ export default async function JournalPage() {
                     alt={article.title}
                     position={article.position}
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className="aspect-4/3 rounded-3xl bg-sand"
+                    className="aspect-3/2 rounded-3xl bg-sand"
                     imgClassName="transition duration-700 group-hover:scale-105"
                   />
                 </Link>
                 <p className="mt-5 text-[14px] text-ink-mute">
                   <time dateTime={article.date}>{formatDate(article.date)}</time>
                 </p>
-                <h2 className="mt-2 font-display text-[30px] font-medium leading-tight">
+                <h2 className="mt-2 font-display text-[24px] font-medium leading-tight sm:text-[28px]">
                   <Link href={`/journal/${article.slug}`} className="transition-colors hover:text-bloom">
                     {article.title}
                   </Link>

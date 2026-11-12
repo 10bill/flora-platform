@@ -46,19 +46,19 @@ export default async function BouquetPage({ params }: Props) {
             ← Tous les bouquets
           </Link>
 
-          <div className="mt-8 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
             <Photo
               src={bouquet.image}
               alt={bouquet.title}
               position={bouquet.position}
               sizes="(min-width: 1024px) 50vw, 100vw"
               eager
-              className="aspect-4/5 rounded-4xl border border-line bg-sand"
+              className="mx-auto aspect-square w-full max-w-md rounded-4xl border border-line bg-sand lg:mx-0 lg:max-w-none"
             />
 
             <div className="lg:sticky lg:top-28">
               <Eyebrow>{bouquet.tag}</Eyebrow>
-              <h1 className="mt-6 font-display text-[48px] font-medium leading-[0.98] tracking-[-0.02em] sm:text-[64px]">
+              <h1 className="mt-6 font-display text-[36px] font-medium leading-[0.98] tracking-[-0.02em] sm:text-[52px] lg:text-[64px]">
                 {bouquet.title}
               </h1>
               <p className="mt-4 font-display text-[36px] text-clay">
@@ -137,7 +137,7 @@ export default async function BouquetPage({ params }: Props) {
             <h2 className="mb-10 font-display text-[40px] font-medium leading-none">
               Vous aimerez aussi
             </h2>
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-8">
               {related.map((item) => (
                 <BouquetCard key={item.slug} bouquet={item} />
               ))}

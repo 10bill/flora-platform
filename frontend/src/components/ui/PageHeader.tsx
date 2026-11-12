@@ -22,7 +22,7 @@ export function PageHeader({
       />
       <Container className="relative py-16 sm:py-20 lg:py-24">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-5 max-w-3xl font-display text-[52px] font-semibold leading-[0.95] sm:text-[84px]">
+        <h1 className="mt-5 max-w-3xl font-display text-[40px] font-semibold leading-[0.95] sm:text-[64px] lg:text-[84px]">
           {title}
         </h1>
         {intro && <p className="mt-6 max-w-xl text-[18px] leading-8 text-ink-soft">{intro}</p>}

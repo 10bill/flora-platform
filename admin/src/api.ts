@@ -72,10 +72,53 @@ export const api = {
   del: <T>(path: string, body?: unknown) => request<T>("DELETE", path, body),
 };
 
-/** Envoie des photos (jusqu'à 10) et retourne leurs adresses. */
+/**
+ * Réduit une photo avant l'envoi : 1600 px maximum sur le grand côté, en JPEG compressé.
+ * Une photo de téléphone de 5 Mo passe ainsi à ~300 Ko, sans perte visible, et le site reste rapide.
+ * En cas de problème (format non lisible…), la photo d'origine est envoyée telle quelle.
+ */
+export async function shrinkImage(file: File, maxSide = 1600, quality = 0.82): Promise<File> {
+  try {
+    // « from-image » : respecte l'orientation des photos prises avec un téléphone
+    const bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+    const scale = Math.min(1, maxSide / Math.max(bitmap.width, bitmap.height));
+
+    // Déjà petite et légère : on ne la touche pas
+    if (scale === 1 && file.size <= 400 * 1024) {
+      bitmap.close();
+      return file;
+    }
+
+    const width = Math.round(bitmap.width * scale);
+    const height = Math.round(bitmap.height * scale);
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      bitmap.close();
+      return file;
+    }
+    context.fillStyle = "#ffffff"; // fond blanc pour les PNG transparents
+    context.fillRect(0, 0, width, height);
+    context.imageSmoothingQuality = "high";
+    context.drawImage(bitmap, 0, 0, width, height);
+    bitmap.close();
+
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", quality));
+    if (!blob || (scale === 1 && blob.size >= file.size)) return file;
+
+    return new File([blob], `${file.name.replace(/\.[^.]+$/, "")}.jpg`, { type: "image/jpeg" });
+  } catch {
+    return file;
+  }
+}
+
+/** Envoie des photos (jusqu'à 10, réduites automatiquement) et retourne leurs adresses. */
 export async function uploadImages(files: File[]): Promise<string[]> {
   const form = new FormData();
-  for (const file of files) form.append("images", file);
+  for (const file of await Promise.all(files.map((item) => shrinkImage(item)))) form.append("images", file);
   return (await request<{ urls: string[] }>("POST", "/api/admin/images", form)).urls;
 }
 

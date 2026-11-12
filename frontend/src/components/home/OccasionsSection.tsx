@@ -7,10 +7,10 @@ import { site } from "@/lib/site";
 
 export function OccasionsSection() {
   return (
-    <section className="bg-sand py-24 sm:py-32">
-      <Container className="grid items-center gap-16 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
+    <section className="bg-sand py-16 sm:py-24 lg:py-32">
+      <Container className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
         <div>
-          <h2 className="max-w-lg font-display text-[44px] font-semibold leading-[0.98] sm:text-[64px]">
+          <h2 className="max-w-lg font-display text-[34px] font-semibold leading-[0.98] sm:text-[52px] lg:text-[64px]">
             Il y a toujours
             <br />
             <Em>une belle raison.</Em>
@@ -38,7 +38,7 @@ export function OccasionsSection() {
           </ul>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[520px] lg:mx-0 lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[420px] lg:mx-0 lg:max-w-none">
           <div
             aria-hidden="true"
             className="absolute -bottom-5 -right-5 size-full rounded-4xl bg-sky"
@@ -47,7 +47,7 @@ export function OccasionsSection() {
             src={site.occasionsImage}
             alt="Coffret de roses rouges, chocolats et Baileys"
             sizes="(min-width: 1024px) 45vw, 100vw"
-            className="relative aspect-4/5 rounded-4xl bg-peach"
+            className="relative aspect-square rounded-4xl bg-peach"
           />
           <p className="absolute bottom-5 left-5 rounded-full bg-cream px-4 py-2 text-[15px] font-semibold">
             Roses, chocolats, Baileys

@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: Props) {
           <p className="text-[14px] text-clay">
             <time dateTime={article.date}>{formatDate(article.date)}</time>
           </p>
-          <h1 className="mt-5 font-display text-[44px] font-medium leading-[1.02] tracking-[-0.02em] sm:text-[64px]">
+          <h1 className="mt-5 font-display text-[34px] font-medium leading-[1.02] tracking-[-0.02em] sm:text-[52px] lg:text-[64px]">
             {article.title}
           </h1>
           <p className="mt-5 text-[18px] font-light leading-8 text-ink-soft">{article.excerpt}</p>
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
           position={article.position}
           sizes="(min-width: 1280px) 1200px, 100vw"
           eager
-          className="mx-auto mt-12 aspect-16/9 max-w-5xl rounded-4xl bg-sand"
+          className="mx-auto mt-12 aspect-3/2 max-w-3xl sm:aspect-16/9 sm:max-w-4xl rounded-4xl bg-sand"
         />
 
         <div className="mx-auto mt-12 max-w-2xl space-y-6 text-[18px] font-light leading-9 text-ink-soft">

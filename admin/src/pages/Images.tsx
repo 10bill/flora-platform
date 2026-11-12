@@ -60,7 +60,7 @@ export function Images() {
       <form className="card" style={{ marginTop: 24 }} onSubmit={(event) => void upload(event)}>
         <h2>Envoyer des photos</h2>
         <input ref={input} type="file" name="images" multiple required accept="image/jpeg,image/png,image/webp" style={{ marginTop: 14 }} />
-        <p className="hint">JPG, PNG ou WebP, 4 Mo maximum chacune, 10 photos à la fois. Ensuite, choisis-les dans la fiche d'un produit ou dans un article du journal.</p>
+        <p className="hint">JPG, PNG ou WebP, 10 photos à la fois. Chaque photo est réduite automatiquement (1600 px maximum) avant l'envoi pour que le site reste rapide. Ensuite, choisis-les dans la fiche d'un produit ou dans un article du journal.</p>
         <button className="btn primary" type="submit" disabled={busy} style={{ marginTop: 16 }}>
           {busy ? "Envoi…" : "Envoyer"}
         </button>

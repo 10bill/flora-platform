@@ -34,7 +34,7 @@ export function ImagePicker({ value, onChange }: { value: string; onChange: (url
         disabled={uploading}
         onChange={(event) => void onFile(event.target.files)}
       />
-      <p className="hint">{uploading ? "Envoi en cours…" : "JPG, PNG ou WebP, 4 Mo maximum, au moins 1200 px de large."}</p>
+      <p className="hint">{uploading ? "Envoi en cours…" : "JPG, PNG ou WebP. La photo est réduite automatiquement (1600 px maximum) avant l'envoi."}</p>
       {error && <Notice tone="error">{error}</Notice>}
 
       {library.data && library.data.length > 0 && (

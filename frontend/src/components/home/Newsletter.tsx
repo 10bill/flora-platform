@@ -4,7 +4,7 @@ import { Em } from "@/components/ui/Em";
 
 export function Newsletter() {
   return (
-    <section className="bg-peach py-24 sm:py-28">
+    <section className="bg-peach py-16 sm:py-24">
       <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
         <div>
           <h2 className="font-display text-[42px] font-semibold leading-[1] sm:text-[58px]">

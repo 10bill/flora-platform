@@ -7,9 +7,9 @@ import { site } from "@/lib/site";
 
 export function AtelierSection() {
   return (
-    <section className="py-24 sm:py-32">
-      <Container className="grid items-center gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-        <div className="relative mx-auto w-full max-w-[480px] lg:mx-0">
+    <section className="py-16 sm:py-24 lg:py-32">
+      <Container className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+        <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[400px] lg:mx-0">
           <div
             aria-hidden="true"
             className="absolute -left-5 -top-5 size-full rounded-4xl border-2 border-bloom"
@@ -18,12 +18,12 @@ export function AtelierSection() {
             src={site.facadeImage}
             alt="Façade de la boutique Flora, avec sa grande rose rouge"
             sizes="(min-width: 1024px) 40vw, 100vw"
-            className="relative aspect-3/4 rounded-4xl bg-peach"
+            className="relative aspect-square rounded-4xl bg-peach"
           />
         </div>
 
         <div>
-          <h2 className="font-display text-[44px] font-semibold leading-[0.98] sm:text-[64px]">
+          <h2 className="font-display text-[34px] font-semibold leading-[0.98] sm:text-[52px] lg:text-[64px]">
             Des mains, du cœur,
             <br />
             <Em>et un peu de poésie.</Em>

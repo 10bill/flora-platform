@@ -50,7 +50,7 @@ export default function AtelierPage() {
               src={site.facadeImage}
               alt="Façade de la boutique Flora"
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="min-h-120 rounded-4xl border border-line bg-[#ddd3ca]"
+              className="min-h-72 rounded-4xl sm:min-h-96 lg:min-h-120 border border-line bg-[#ddd3ca]"
             />
             <div
               aria-hidden="true"

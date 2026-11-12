@@ -15,8 +15,8 @@ export function BouquetCard({ bouquet }: { bouquet: Bouquet }) {
             src={bouquet.image}
             alt={bouquet.title}
             position={bouquet.position}
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="aspect-4/5 rounded-t-full rounded-b-3xl bg-peach"
+            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 33vw, 50vw"
+            className="aspect-square rounded-t-full rounded-b-3xl bg-peach"
             imgClassName="transition duration-700 group-hover:scale-105"
           />
         </Link>
@@ -28,17 +28,17 @@ export function BouquetCard({ bouquet }: { bouquet: Bouquet }) {
         <AddToCartButton slug={bouquet.slug} title={bouquet.title} variant="overlay" />
       </div>
 
-      <div className="mt-8 flex items-start justify-between gap-4">
+      <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <div>
-          <h3 className="font-display text-[30px] font-semibold leading-[1.05]">
+          <h3 className="font-display text-[20px] font-semibold leading-[1.05] sm:text-[26px] lg:text-[30px]">
             <Link href={href} className="transition-colors hover:text-bloom">
               {bouquet.title}
             </Link>
           </h3>
-          <p className="mt-2 text-[16px] leading-6 text-ink-soft">{bouquet.description}</p>
+          <p className="mt-1.5 text-[13px] leading-5 text-ink-soft sm:mt-2 sm:text-[16px] sm:leading-6">{bouquet.description}</p>
         </div>
-        <div className="shrink-0 text-right">
-          <span className="block whitespace-nowrap text-[19px] font-bold text-bloom">
+        <div className="shrink-0 sm:text-right">
+          <span className="block whitespace-nowrap text-[16px] font-bold text-bloom sm:text-[19px]">
             {formatPrice(bouquet.price)}
           </span>
           {bouquet.oldPrice && (

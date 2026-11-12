@@ -20,10 +20,10 @@ const services = [
 
 export function Services() {
   return (
-    <section className="bg-sky py-24 text-cream sm:py-32">
+    <section className="bg-sky py-16 text-cream sm:py-24 lg:py-32">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
-          <h2 className="font-display text-[44px] font-semibold leading-[0.98] sm:text-[64px]">
+          <h2 className="font-display text-[34px] font-semibold leading-[0.98] sm:text-[52px] lg:text-[64px]">
             De vos envies
             <br />
             <Em>à ses mains.</Em>
@@ -33,7 +33,7 @@ export function Services() {
           </Link>
         </div>
 
-        <div className="mt-16 grid border-t-2 border-cream/40 md:grid-cols-3">
+        <div className="mt-12 grid border-t-2 border-cream/40 md:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}

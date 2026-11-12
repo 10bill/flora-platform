@@ -23,7 +23,7 @@ export function Hero() {
             Fleuriste à {site.city} depuis {years} ans
           </p>
 
-          <h1 className="font-display text-[60px] font-semibold leading-[0.9] sm:text-[92px] lg:text-[104px] xl:text-[122px]">
+          <h1 className="font-display text-[52px] font-semibold leading-[0.9] sm:text-[76px] lg:text-[92px] xl:text-[104px]">
             <span className="line-mask">
               <span style={{ "--delay": "0s" } as CSSProperties}>Des fleurs.</span>
             </span>
@@ -37,7 +37,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-9 max-w-md text-[19px] leading-8 text-ink-soft">
+          <p className="mt-7 max-w-md text-[17px] leading-7 sm:mt-9 sm:text-[19px] sm:leading-8 text-ink-soft">
             Des bouquets vivants, composés à la main, pour les grandes occasions et les petits
             bonheurs du quotidien.
           </p>
@@ -55,7 +55,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[520px] lg:mx-0 lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[420px] lg:mx-0 lg:max-w-none">
           {/* le soleil derrière l’arche */}
           <div
             aria-hidden="true"
@@ -67,7 +67,7 @@ export function Hero() {
             alt="Bouquet soleil en papier pêche devant la boutique Flora"
             sizes="(min-width: 1024px) 480px, 100vw"
             eager
-            className="relative z-10 h-[470px] rounded-t-full bg-sky-soft sm:h-[620px] lg:h-[700px]"
+            className="relative z-10 h-[340px] rounded-t-full bg-sky-soft sm:h-[440px] lg:h-[540px]"
           />
 
           <div className="absolute -left-1 top-12 z-20 size-28 sm:-left-8 sm:size-36">

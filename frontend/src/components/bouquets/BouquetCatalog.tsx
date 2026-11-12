@@ -67,7 +67,7 @@ export function BouquetCatalog({
       </p>
 
       {visible.length > 0 ? (
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-8">
           {visible.map((bouquet) => (
             <BouquetCard key={bouquet.slug} bouquet={bouquet} />
           ))}
